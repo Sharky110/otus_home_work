@@ -1,4 +1,4 @@
-module github.com/Sharky110/hw02_unpack_string
+module github.com/Sharky110/otus_home_work/hw02_unpack_string
 
 go 1.16
 
