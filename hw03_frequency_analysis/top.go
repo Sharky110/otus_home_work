@@ -18,7 +18,7 @@ func Top10(str string) []string {
 		newWord := true
 		for i := range dict {
 			if dict[i].val == v {
-				dict[i].amount += 1
+				dict[i].amount++
 				newWord = false
 				break
 			}
@@ -34,9 +34,8 @@ func Top10(str string) []string {
 	sort.Slice(dict, func(i, j int) bool {
 		if dict[i].amount == dict[j].amount {
 			return strings.Compare(dict[i].val, dict[j].val) < 0
-		} else {
-			return dict[i].amount > dict[j].amount
 		}
+		return dict[i].amount > dict[j].amount
 	})
 
 	var length int
@@ -46,7 +45,7 @@ func Top10(str string) []string {
 		length = len(dict)
 	}
 
-	var sls = make([]string, length)
+	sls := make([]string, length)
 	for i, v := range dict {
 		if i > 9 {
 			break
