@@ -40,10 +40,10 @@ func (c *lruCache) Get(key Key) (interface{}, bool) {
 	if c.items[key] != nil {
 		c.queue.MoveToFront(c.items[key])
 		return c.items[key].Value, true
-	} else {
-		return nil, false
 	}
+	return nil, false
 }
+
 func (c *lruCache) Clear() {
 	c.items = make(map[Key]*ListItem, c.capacity)
 	c.queue = NewList()

@@ -59,7 +59,7 @@ func TestCache(t *testing.T) {
 		require.Equal(t, 1, v)
 
 		c.Set("d", 4)
-		v, b = c.Get("b")
+		_, b = c.Get("b")
 		require.Equal(t, false, b)
 	})
 }
